@@ -1,0 +1,20 @@
+<div class="row mt-5">
+	<div class="col-md col-sm-12">
+		<input [(ngModel)]="searchValue" (keyup.enter)="getImages()" type="text" placeholder="search" class="form-control">
+	</div>
+	<div class="col-md">
+		<button class="btn btn-success" (click)="getImages()">Search</button>
+	</div>
+</div>
+<div class="row mt-5">
+	<div class="col my-3" *ngFor="let image of images?.hits" [key]="image.id">
+		<div class="card text-center">
+			<div class="card-body">
+				<img width="156" height="100" [src]="image.previewURL" alt="">
+			</div>
+			<div class="card-footer">
+				<p>Image</p>
+			</div>
+		</div>
+	</div>
+</div>
